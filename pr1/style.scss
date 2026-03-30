@@ -1,0 +1,130 @@
+// Переменные
+$primary-color: #e67e22;      // Оранжевый (акцентный цвет)
+$secondary-color: #27ae60;    // Зеленый (цена со скидкой)
+$card-bg: #ffffff;            // Белый фон
+$card-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+$border-radius: 16px;
+$transition: all 0.3s ease;
+
+// Миксин для кнопки
+@mixin button-style($bg-color) {
+    display: inline-block;
+    padding: 12px 24px;
+    background: $bg-color;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    transition: $transition;
+    
+    &:hover {
+        background: darken($bg-color, 10%);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+}
+
+// Миксин для цены
+@mixin price-text($color) {
+    color: $color;
+    font-weight: bold;
+}
+
+// Карточка товара
+.product-card {
+    width: 340px;
+    background: $card-bg;
+    border-radius: $border-radius;
+    overflow: hidden;
+    box-shadow: $card-shadow;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: $transition;
+    position: relative;
+    margin: 20px;
+    
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    }
+    
+    // Бейдж "Новинка"
+    &__badge {
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        background: $primary-color;
+        color: white;
+        padding: 5px 12px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: bold;
+        z-index: 10;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+    
+    // Изображение
+    &__image {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        transition: $transition;
+        
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+    
+    // Контентная часть
+    &__content {
+        padding: 20px;
+    }
+    
+    // Заголовок
+    &__title {
+        font-size: 20px;
+        font-weight: bold;
+        color: #2c3e50;
+        margin: 0 0 10px 0;
+        line-height: 1.3;
+    }
+    
+    // Описание
+    &__description {
+        font-size: 13px;
+        color: #7f8c8d;
+        line-height: 1.5;
+        margin: 0 0 15px 0;
+    }
+    
+    // Блок с ценой
+    &__price {
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+    
+    // Старая цена
+    &__price-old {
+        font-size: 14px;
+        color: #bdc3c7;
+        text-decoration: line-through;
+        @include price-text(#bdc3c7);
+    }
+    
+    // Новая цена
+    &__price-current {
+        font-size: 26px;
+        @include price-text($secondary-color);
+    }
+    
+    // Кнопка
+    &__button {
+        @include button-style($primary-color);
+        width: 100%;
+    }
+}
