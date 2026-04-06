@@ -1,0 +1,254 @@
+$bg-dark: #1a1a2e;
+$bg-card: #16213e;
+$primary: #e94560;
+$text: #eee;
+$border: #0f3460;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: $bg-dark;
+    color: $text;
+}
+
+.products-page {
+    min-height: 100vh;
+}
+
+.header {
+    background: $bg-card;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid $primary;
+    
+    h1 {
+        font-size: 24px;
+    }
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.2s;
+    
+    &--primary {
+        background: $primary;
+        color: white;
+        
+        &:hover {
+            background: darken($primary, 10%);
+            transform: scale(1.02);
+        }
+    }
+}
+
+.main {
+    padding: 40px;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+}
+
+.product-card {
+    background: $bg-card;
+    border-radius: 16px;
+    padding: 20px;
+    transition: transform 0.2s;
+    position: relative;
+    
+    &:hover {
+        transform: translateY(-5px);
+    }
+    
+    &__badge {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        background: $primary;
+        padding: 4px 10px;
+        border-radius: 20px;
+        font-size: 12px;
+    }
+    
+    &__title {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 8px;
+        padding-right: 50px;
+    }
+    
+    &__category {
+        color: $primary;
+        font-size: 12px;
+        margin-bottom: 12px;
+    }
+    
+    &__description {
+        font-size: 13px;
+        color: #aaa;
+        margin-bottom: 16px;
+        line-height: 1.4;
+    }
+    
+    &__price {
+        font-size: 24px;
+        font-weight: bold;
+        color: $primary;
+        margin-bottom: 8px;
+    }
+    
+    &__stock {
+        font-size: 12px;
+        color: #888;
+        margin-bottom: 16px;
+    }
+    
+    &__actions {
+        display: flex;
+        gap: 12px;
+        
+        .btn--edit {
+            background: #2c3e66;
+            color: white;
+            padding: 8px 12px;
+            font-size: 12px;
+            
+            &:hover {
+                background: #3a4e7a;
+            }
+        }
+        
+        .btn--delete {
+            background: #5c2e3a;
+            color: white;
+            padding: 8px 12px;
+            font-size: 12px;
+            
+            &:hover {
+                background: #7a3a4a;
+            }
+        }
+    }
+}
+
+.loading {
+    text-align: center;
+    padding: 60px;
+    font-size: 20px;
+}
+
+// Модальное окно
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal {
+    background: $bg-card;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+    
+    &__header {
+        padding: 20px;
+        border-bottom: 1px solid $border;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+        h2 {
+            font-size: 20px;
+        }
+    }
+    
+    &__close {
+        background: none;
+        border: none;
+        color: $text;
+        font-size: 24px;
+        cursor: pointer;
+        
+        &:hover {
+            color: $primary;
+        }
+    }
+    
+    &__form {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        
+        label {
+            font-size: 14px;
+            font-weight: bold;
+        }
+        
+        input, textarea {
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid $border;
+            background: rgba(255, 255, 255, 0.1);
+            color: $text;
+            font-size: 14px;
+            
+            &:focus {
+                outline: none;
+                border-color: $primary;
+            }
+        }
+        
+        textarea {
+            min-height: 80px;
+            resize: vertical;
+        }
+    }
+    
+    &__buttons {
+        display: flex;
+        gap: 12px;
+        justify-content: flex-end;
+        margin-top: 8px;
+        
+        .btn--cancel {
+            background: #333;
+            color: white;
+            
+            &:hover {
+                background: #444;
+            }
+        }
+        
+        .btn--submit {
+            background: $primary;
+            color: white;
+            
+            &:hover {
+                background: darken($primary, 10%);
+            }
+        }
+    }
+}
