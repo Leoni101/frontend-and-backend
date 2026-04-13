@@ -77,7 +77,7 @@ export default function ProductsPage() {
     return (
         <div className="products-page">
             <header className="header">
-                <h1>🐾 Зоомагазин</h1>
+                <h1>🐾 Зоомагазин Мягкая лапка</h1>
                 <button className="btn btn--primary" onClick={openCreate}>+ Добавить товар</button>
             </header>
             
