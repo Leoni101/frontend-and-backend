@@ -1,0 +1,42 @@
+[
+  {
+    "id": "e46MtKkF",
+    "email": "sos@mail.ru",
+    "first_name": "Катя",
+    "last_name": "Смирнова",
+    "hashedPassword": "$2b$10$j/eNRug2pbdsPQxAGFv3COcN8ETVmCw55xPM9wvO/z3JHht1hKJ.q",
+    "role": "user",
+    "isActive": true,
+    "createdAt": "2026-05-17T13:53:22.636Z"
+  },
+  {
+    "id": "z03-1ySn",
+    "email": "lala@mail.ru",
+    "first_name": "Николай",
+    "last_name": "Иванов",
+    "hashedPassword": "$2b$10$7oF/LLZDOyHD9vv2nWmOSeO.CjtgEjKh633.xq0rMm/mJFQ./ClqO",
+    "role": "admin",
+    "isActive": true,
+    "createdAt": "2026-05-17T15:52:44.768Z"
+  },
+  {
+    "id": "yq-0iAhA",
+    "email": "okok@mail.ru",
+    "first_name": "Елена",
+    "last_name": "Иванова",
+    "hashedPassword": "$2b$10$pWWXqTBreOoasdnq6iddA.CZYfxj3bFjCE6bpPKPsjJ93yk26rXJS",
+    "role": "seller",
+    "isActive": true,
+    "createdAt": "2026-05-17T17:05:58.106Z"
+  },
+  {
+    "id": "7S7KQQ5s",
+    "email": "sss@mail.ru",
+    "first_name": "Дима",
+    "last_name": "Билан",
+    "hashedPassword": "$2b$10$rjUTHDq0DwaDtxTvfSY5PONd4fo.ETUz.PFDzeIMDTZbmq4kZv6W2",
+    "role": "user",
+    "isActive": false,
+    "createdAt": "2026-05-17T17:07:56.692Z"
+  }
+]

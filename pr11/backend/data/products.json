@@ -1,0 +1,34 @@
+[
+  {
+    "id": "prod_001",
+    "title": "Ошейник для кошек",
+    "category": "Аксессуары",
+    "description": "Натуральная кожа, мягкая подкладка. Регулируется от 35 до 55 см.",
+    "price": 1490,
+    "image": "/images/ошейник.jpg",
+    "createdBy": "system",
+    "createdAt": "2025-01-01T00:00:00.000Z",
+    "updatedAt": "2026-05-17T16:23:33.392Z"
+  },
+  {
+    "id": "prod_002",
+    "title": "Корм Purina ONE",
+    "category": "Корм",
+    "description": "Полнорационный сухой корм для кошек всех пород.",
+    "price": 990,
+    "image": "/images/корм.jpg",
+    "createdBy": "system",
+    "createdAt": "2025-01-01T00:00:00.000Z",
+    "updatedAt": "2026-05-17T16:30:51.095Z"
+  },
+  {
+    "id": "prod_003",
+    "title": "Игрушка-мячик",
+    "category": "Игрушки",
+    "description": "Прочный резиновый мяч с пищалкой. Подходит для активных игр.",
+    "price": 350,
+    "image": "/images/игрушка.jpg",
+    "createdBy": "system",
+    "createdAt": "2025-01-01T00:00:00.000Z"
+  }
+]
